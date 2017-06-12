@@ -1,0 +1,15 @@
+[Unit]
+Description=Echo Http Server
+After=network.target
+After=syslog.target
+
+[Service]
+Type=forking
+PIDFile=/tmp/lhy_process.pid
+ExecStart=/usr/local/php/bin/php /home/lihongyi/stream/index.php
+ExecStop=/usr/local/php/bin/php /home/lihongyi/stream/shell/manage.php stop $MAINPID
+ExecReload=/usr/local/php/bin/php /home/lihongyi/stream/shell/manage.php reload $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target graphical.target
