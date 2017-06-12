@@ -71,7 +71,7 @@ class Index
     private function initWorker()
     {
         $this->http->on('workerStart', function ($serv, $id) {
-            opcache_reset();
+            function_exists('opcache_reset') && opcache_reset();
 
 //            require_once __DIR__.'/conf/service_'.get_cfg_var('yaf.environ').'.php';  // 加载配置
             require_once __DIR__.'/conf/service_develop.php';  // 加载配置
