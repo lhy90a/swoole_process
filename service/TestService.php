@@ -12,8 +12,9 @@ return  ( new class  extends Base
 
     public function run($process)
     {
-        parent::kafka_init(['groupId'=>'TestService']);  // 初始化配置
-        parent::heart($process);  // add heart
+        $this->kafka_init(['groupId'=>'TestService']);  // 初始化配置
+        $this->regHeartSignal($process);
+        $this->heart();  // add heart
 
         $this->k_instance->consume(function($msg){
             $this->test($msg);
