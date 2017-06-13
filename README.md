@@ -5,6 +5,15 @@ install extension swoole
 
 可以通过接口对守护进程进程管理操作,通过进程间通信上报心跳。使用weiboad/kafka-php 支持kafka消费
 
+
+ln -s swoole_process.service /etc/systemd/system/swoole_process.service  
+
+主进程启动
+systemctl start swoole_process.service
+systemctl stop swoole_process.service
+systemctl reload swoole_process.service
+
+
 #### 开启进程服务
 url: http://127.0.0.1:9595/?action=start&service=Test1Service
 
