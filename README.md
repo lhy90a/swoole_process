@@ -1,7 +1,7 @@
 # swoole_process
 swoole process manage api
-
-install extension swoole 
+php7 
+install extension swoole 1.9 
 
 可以通过接口对守护进程进程管理操作,通过进程间通信上报心跳。使用weiboad/kafka-php 支持kafka消费
 
